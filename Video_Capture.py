@@ -53,12 +53,14 @@ def Show_Locations(face_locations = [], Stream = None, displayed = []):
     if Stream is None:
         raise Exception("Stream Not Working")
         
-    for name ,(t, r, b, l) in face_locations:
+    for name ,(t, r, b, l), acc in face_locations:
         if name not in displayed:
             displayed.append(name)
             print(f'{name} is at location ({(l+r)//2},{(b+t)//2})',end = '\n')
+        acc = str(acc) + '%'
         cv2.circle(Stream, ((l+r)//2, (b+t)//2), 150, (255,255,255))
         cv2.putText(Stream, name, (l+6, b-6),cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 0, 0))
+        cv2.putText(Stream, acc, (r+6, b-6),cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 0, 0))
                 
     cv2.imshow("Frame", Stream)
     cv2.waitKey(1)
@@ -82,6 +84,7 @@ def Video_predict(knn_clf = None, model_path = None, distance_threshold = 0.5, v
     
     attendence = []
     displayed = []
+    accuracy = []
     new = []
 
     try:
@@ -107,11 +110,12 @@ def Video_predict(knn_clf = None, model_path = None, distance_threshold = 0.5, v
                 are_matches.append(closest_distances[0][i][0] <= distance_threshold)
             
             face_locations = []
-            for pred, loc, rec in zip(Classifier.predict(faces_encodings), Stream_face_locations, are_matches):
+            for pred, prob, loc, rec in zip(Classifier.predict(faces_encodings), max(Classifier.predict_proba(faces_encodings)), Stream_face_locations, are_matches):
                 if rec:
                     if pred not in attendence:
-                        attendence.append(pred)
-                    face_locations.append((pred, loc))
+                        attendence.append((pred))
+                        accuracy.append(prob*100)
+                    face_locations.append((pred, loc, prob*100))
                 else:
                     face_locations.append(("unknown", loc))
                     new.append((Stream, loc))
@@ -122,8 +126,8 @@ def Video_predict(knn_clf = None, model_path = None, distance_threshold = 0.5, v
         
         if len(attendence) != 0:
             print("Attended People")
-            for name in attendence:
-                print(f'{name}', end = '\n')
+            for name, acc in zip(attendence, accuracy):
+                print(f"{name} and I'm {acc}% sure.", end = '\n')
                 
         if len(new) != 0:
             print("New People")
@@ -144,7 +148,7 @@ def Video_predict(knn_clf = None, model_path = None, distance_threshold = 0.5, v
 
 if __name__ == '__main__':
     
-    msg = Video_predict(model_path = './Model/trained_knn_model.clf', distance_threshold = 0.6, verbose = True)
+    msg = Video_predict(model_path = './Model/trained_knn_model.clf', distance_threshold = 0.6, verbose = False)
     print(msg)
     
     
