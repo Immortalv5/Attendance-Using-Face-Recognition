@@ -11,10 +11,12 @@
   
 ## Working Procedure  
   - Upload the face data (Images) in **Folders** at the `Data/Train` Path. The Folder Names will be the labels of the Person in the images.  
+  ![Data Structure](https://github.com/Immortalv5/Face-Recognition/blob/master/IMG/Data%20Structure.png)
   - Run `Train.py` for training the classifier which uses [KNN](https://scikit-learn.org/stable/modules/neighbors.html) (K- Nearest Neighbors Algorithm).
   - The Classifier is saved in `Model/` directory in `.clf` format.
   - By running `Video_Capture.py`, the video starts to stream from the choosen camera and labels the faces in the live stream.
   - If it finds an unknown face, it takes a snap and store it in the `\Noobie` directory.  
+  ![Unknown](https://github.com/Immortalv5/Face-Recognition/blob/master/IMG/Unknown.png)
   
 ## Conclusion
 > The Face_Recognition Software can be used for many applications. Personally in use it for **Attendence System Based on Face Recognition**, for getting staff attendance. It can also be used as **Security** purpose.  
