@@ -1,10 +1,11 @@
 numpy
+matplotlib
 Pillow
-pickle
 Click
 tox
 flake8
 sklearn
 dlib==19.7.0
 opencv-contrib-python
+face_recognition
 face_recognition_models
