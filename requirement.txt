@@ -5,7 +5,8 @@ Click
 tox
 flake8
 sklearn
-dlib==19.7.0
+cmake
+dlib
 opencv-contrib-python
 face_recognition
 face_recognition_models
