@@ -7,7 +7,7 @@
   - All the required modules are in the requirement text file   
   `pip install requirement.txt`
   - or Execute the following **Command** to install the modules.   
-  `pip install matplotlib numpy Pillow Click tox flake8 dlib==19.7.0 sklearn face_recognition_models face_recognition opencv-contrib-python`
+  `pip install matplotlib numpy Pillow Click tox flake8 cmake dlib sklearn face_recognition_models face_recognition opencv-contrib-python`
   
 ## Working Procedure  
   - Upload the face data (Images) in **Folders** at the `Data/Train` Path. The Folder Names will be the labels of the Person in the images.  
