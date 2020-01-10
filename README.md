@@ -22,8 +22,8 @@
   ![Unknown](https://github.com/Immortalv5/Face-Recognition/blob/master/IMG/Unknown.png)
   
 ## Results
-> If the Video display module is turned off, the software gives the list of people it recognized and how accurate it is.  
+> If the Video display module is turned off, the software gives the list of people it recognized and how accurate it is in a command line.  
 
   ![Results](https://github.com/Immortalv5/Face-Recognition/blob/master/IMG/Results.png)
 ## Conclusion
-> The Face_Recognition Software can be used for many applications. Personally in use it for **Attendence System Based on Face Recognition**, for getting staff attendance. It can also be used as **Security** purpose.  
+> The Face_Recognition Software can be used for many applications. I have createed this for **Attendence System Based on Face Recognition**, for getting staff attendance. It can also be used as **Security** purpose.  
