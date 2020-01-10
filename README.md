@@ -7,7 +7,7 @@
   - All the required modules are in the requirement text file   
   `pip install requirement.txt`
   - or Execute the following **Command** to install the modules.   
-  `pip install matplotlib numpy Pillow Click tox flake8 cmake dlib sklearn face_recognition_models face_recognition opencv-contrib-python`
+  `pip install matplotlib numpy Pillow Click tox flake8 cmake dlib==19.8.1 sklearn face_recognition_models face_recognition opencv-contrib-python`
   - For creating a conda environment, the environment.yml file has all the requirement. The following command should be executed on anaconda prompt
   `conda env create -f environment.yml`
   where **environment.yml** is the path of the environment file.
