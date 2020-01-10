@@ -8,6 +8,9 @@
   `pip install requirement.txt`
   - or Execute the following **Command** to install the modules.   
   `pip install matplotlib numpy Pillow Click tox flake8 cmake dlib sklearn face_recognition_models face_recognition opencv-contrib-python`
+  - For creating a conda environment, the environment.yml file has all the requirement. The following command should be executed on anaconda prompt
+  `conda env create -f environment.yml`
+  where **environment.yml** is the path of the environment file.
   
 ## Working Procedure  
   - Upload the face data (Images) in **Folders** at the `Data/Train` Path. The Folder Names will be the labels of the Person in the images.  
