@@ -1,4 +1,4 @@
-# Face-Recognition
+# Attendance Using Face Recognition
 
   > The Face-Recognition Software is done using the [face_recognition](https://pypi.org/project/face_recognition/) library which requires [dlib](http://dlib.net), the C++ based machine learning and deep learning module.
 
