@@ -26,4 +26,8 @@
 
   ![Results](https://github.com/Immortalv5/Face-Recognition/blob/master/IMG/Results.png)
 ## Conclusion
-> The Face_Recognition Software can be used for many applications. I have createed this for **Attendence System Based on Face Recognition**, for getting staff attendance. It can also be used as **Security** purpose.  
+> The Face_Recognition Software can be used for many applications. I have createed this for **Attendence System Based on Face Recognition**, for getting staff attendance. It can also be used as **Security** purpose.
+
+## Contributors  
+* Sai Avinash Varma Kucharlapati
+* Amar Sai Teja Chityala
